@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Selamat Ulang Tahun</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #111827;
+    --color-body-text: #6b7280;
+    --color-accent: #ef476f;
+    --color-shadow: rgba(0, 0, 0, 0.07);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+  }
+
+  main.container {
+    max-width: 700px;
+    background: var(--color-bg);
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 30px var(--color-shadow);
+    padding: 3rem 3rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    animation: fadeScaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
+
+  p {
+    font-size: 18px;
+    color: var(--color-body-text);
+    margin: 0;
+    white-space: pre-line;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  /* Floating Balloon Containers */
+  .balloon {
+    position: absolute;
+    width: 60px;
+    height: 90px;
+    bottom: -120px;
+    animation: floatUp ease-in-out infinite;
+  }
+
+  .balloon svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .balloon.red {
+    left: 10%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+  }
+
+  .balloon.blue {
+    left: 80%;
+    animation-duration: 7s;
+    animation-delay: 1.5s;
+  }
+
+  .balloon.yellow {
+    left: 50%;
+    animation-duration: 5.5s;
+    animation-delay: 0.7s;
+  }
+
+  @keyframes floatUp {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-140vh) translateX(15px);
+    }
+  }
+
+  /* Confetti Styles */
+  .confetti-wrapper {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: visible;
+  }
+
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 0.3px rgba(0,0,0,0.06));
+    animation-name: confettiFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes confettiFall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  /* Keyframe for fade and scale in */
+  @keyframes fadeScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+      filter: blur(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0);
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="greeting-title">
+    <h1 id="greeting-title">Happy Birthday!🌸Inky🌸</h1>
+    <p>selamat ulang tahun ya sayang ☺️<br />Aku harap kamu bisa menemukan apa yg kamu inginkan kedepannya 😁</p>
+
+    <!-- Floating Balloons -->
+    <div aria-hidden="true" class="balloon red">
+      <svg viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <ellipse cx="32" cy="40" rx="24" ry="36" fill="#ef476f"/>
+        <path d="M21 72c0 0 6 8 11 8s11-8 11-8" stroke="#d43b62" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="72" x2="32" y2="96" stroke="#d43b62" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div aria-hidden="true" class="balloon blue">
+      <svg viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <ellipse cx="32" cy="40" rx="24" ry="36" fill="#3a86ff"/>
+        <path d="M21 72c0 0 6 8 11 8s11-8 11-8" stroke="#1f5ecc" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="72" x2="32" y2="96" stroke="#1f5ecc" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div aria-hidden="true" class="balloon yellow">
+      <svg viewBox="0 0 64 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <ellipse cx="32" cy="40" rx="24" ry="36" fill="#ffd166"/>
+        <path d="M21 72c0 0 6 8 11 8s11-8 11-8" stroke="#d4b553" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="72" x2="32" y2="96" stroke="#d4b553" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </main>
+
+  <div class="confetti-wrapper" aria-hidden="true"></div>
+
+  <script>
+    // Generate confetti pieces dynamically with random properties
+    const confettiWrapper = document.querySelector('.confetti-wrapper');
+    const confettiCount = 50;
+
+    function randomBetween(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    for (let i = 0; i < confettiCount; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = `${randomBetween(0, 100)}vw`;
+      const size = randomBetween(7, 12);
+      confetti.style.width = confetti.style.height = `${size}px`;
+      // Color palette matching balloons colors for confetti variety
+      const hueOptions = [350, 210, 45];
+      const hue = hueOptions[Math.floor(Math.random() * hueOptions.length)];
+      confetti.style.backgroundColor = `hsl(${hue}, 80%, 65%)`;
+      confetti.style.animationDuration = `${randomBetween(3, 7)}s`;
+      confetti.style.animationDelay = `${randomBetween(0, 7)}s`;
+      confettiWrapper.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
+
